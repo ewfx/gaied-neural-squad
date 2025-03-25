@@ -1,5 +1,7 @@
 # 🚀 Project Name
 
+AI based email classification 
+
 ## 📌 Table of Contents
 - [Introduction](#introduction)
 - [Demo](#demo)
