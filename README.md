@@ -1,5 +1,7 @@
 # 🚀 Project Name
 
+AI based email classification 
+
 ## 📌 Table of Contents
 - [Introduction](#introduction)
 - [Demo](#demo)
@@ -56,5 +58,7 @@ Describe the major technical or non-technical challenges your team encountered.
 - 🔹 Other: OpenAI API / Twilio / Stripe
 
 ## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+- Laxmi Priya Guidvaka - [GitHub](#) | [LinkedIn](#)
+- Sneha Ann Reji - [GitHub](#) | [LinkedIn](#)
+- Apurva J Paul - 
+- Samridh Anand Paatni - [GitHub](https://github.com/The5thAxiom) | [LinkedIn](https://www.linkedin.com/in/samridh-anand-paatni-57a045215/)
