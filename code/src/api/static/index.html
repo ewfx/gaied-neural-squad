@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload EML File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .card {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .card:nth-child(0) {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Upload a .eml File</h2>
+    <input type="file" id="fileInput" accept=".eml">
+    <button onclick="uploadFile()">Upload</button>
+
+    <div id="output"></div>
+
+    <script>
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const outputDiv = document.getElementById('output');
+
+            if (fileInput.files.length === 0) {
+                alert("Please select a .eml file to upload.");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append("file", file);
+
+            outputDiv.style.display = "block";
+            outputDiv.innerHTML = "Uploading...";
+
+            try {
+                const response = await fetch("/api/analyze", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const result = await response.json();
+                if (result.data) {
+                    outputDiv.innerHTML = "<h1>Analysis Results</h1>";
+                    model_outputs = Object.entries(result.data);
+                    for (let [model_name, model_output] of model_outputs) {
+                        outputDiv.innerHTML += `<h2>${model_name}</h2>`;
+                        if (model_output.duplicate) {
+                            outputDiv.innerHTML += "This file can be ignored.";
+                            continue;
+                        }
+                        outputDiv.innerHTML += `<div class="card"><div>Request Type</div> <div>${model_output.requestType}</div></div>`;
+                        outputDiv.innerHTML += `<div class="card"><div>Sub Request Type</div> <div>${model_output.subRequestType}</div></div>`;
+                        outputDiv.innerHTML += `<div class="card"><div>Intent</div> <div>${model_output.intent}</div></div>`;
+                        outputDiv.innerHTML += `<div class="card"><div>Attributes</div>`;
+                        if (model_output.attributes) {
+                            for (let [key, value] of Object.entries(model_output.attributes)) {
+                                outputDiv.innerHTML += `<div class="card">
+                                    <div>${key}</div>
+                                    <div>${Array.isArray(value) ? value.join(", ") : value}</div>
+                                    </div>`;
+                            }
+                        } else {
+                            outputDiv.innerHTML += "no attributes";
+                        }
+                        outputDiv.innerHTML += `</div></div><div>`;
+                    }
+                } else if (result.error) {
+                    outputDiv.innerHTML = `Error: ${result.error}`;
+                } else {
+                    outputDiv.innerHTML = "Error uploading file.";
+                }
+            } catch (error) {
+                outputDiv.innerHTML = "Error uploading file.";
+                console.error("Error:", error);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "b86f771e-d699-452f-a9b9-03443cb6ec86",
+		"name": "genai email classification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15813166"
+	},
+	"item": [
+		{
+			"name": "email 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<canvas id=\"myChart\" height=\"75\"></canvas>\r",
+							"\r",
+							"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> \r",
+							"\r",
+							"<script>\r",
+							"    var ctx = document.getElementById(\"myChart\");\r",
+							"\r",
+							"    var myChart = new Chart(ctx, {\r",
+							"        type: \"bar\",\r",
+							"        data: {\r",
+							"            labels: [],\r",
+							"            datasets: [{\r",
+							"                data: [],\r",
+							"                \r",
+							"                // Change these colours to customize the chart\r",
+							"                backgroundColor: [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\", \"#ffa600\"],\r",
+							"            }]\r",
+							"        },\r",
+							"        options: {\r",
+							"            legend: { display: false },\r",
+							"            title: {\r",
+							"                display: true,\r",
+							"                text: 'Count'\r",
+							"            },\r",
+							"            scales: {\r",
+							"                xAxes: [{\r",
+							"                    display: true,\r",
+							"                    scaleLabel: {\r",
+							"                        display: true,\r",
+							"                        labelString: 'Items'\r",
+							"                    }\r",
+							"                }],\r",
+							"                yAxes: [{\r",
+							"                    display: true,\r",
+							"                    scaleLabel: {\r",
+							"                        display: true,\r",
+							"                        labelString: 'Count'\r",
+							"                    }\r",
+							"                }]\r",
+							"            }\r",
+							"        }\r",
+							"\r",
+							"    });\r",
+							"\r",
+							"    // Access the data passed to pm.visualizer.set() from the JavaScript\r",
+							"    // code of the Visualizer template\r",
+							"    pm.getData(function (err, value) {\r",
+							"        myChart.data.datasets[0].data = value.response.data;\r",
+							"        myChart.data.labels = Object.keys(value.response.data);\r",
+							"        myChart.update();\r",
+							"    });\r",
+							"\r",
+							"</script>`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    var res = pm.response.json();\r",
+							"    \r",
+							"    var visualizerData = {\r",
+							"        \r",
+							"        // Labels take an array of strings\r",
+							"        labels: Object.keys(res.data),\r",
+							"        \r",
+							"        // Data takes an array of numbers\r",
+							"        data: Object.values(res.data)\r",
+							"    };\r",
+							"\r",
+							"    return {response: visualizerData};\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"**Subject:** Loan Servicing Request for payment towards principal amount \\r\\n\\r\\n**Dear Wells Fargo Home Loan Servicing Team,**  \\r\\n\\r\\nI am writing to request a **Money Movement Inbound** transaction with the subtype **Principal** for my home loan account. Below are the details of the request:  \\r\\n\\r\\n**Customer Name:** John A. Doe  \\r\\n**Loan Number:** 123456789  \\r\\n**Payment Amount:** $5,000.00  \\r\\n**Payment Date:** March 25, 2025  \\r\\n**Property Address:** 456 Elm Street, Springfield, IL 62704  \\r\\n\\r\\nPlease apply this payment towards the principal balance of my mortgage loan. Kindly confirm once the transaction has been processed. If any additional documentation or verification is required, please let me know at your earliest convenience.  \\r\\n\\r\\nThank you for your prompt attention to this request.  \\r\\n\\r\\n**Best regards,**  \\r\\nJohn A. Doe  \\r\\n(555) 123-4567  \\r\\njohndoe@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/analyzeEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"analyzeEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "email 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<canvas id=\"myChart\" height=\"75\"></canvas>\r",
+							"\r",
+							"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> \r",
+							"\r",
+							"<script>\r",
+							"    var ctx = document.getElementById(\"myChart\");\r",
+							"\r",
+							"    var myChart = new Chart(ctx, {\r",
+							"        type: \"bar\",\r",
+							"        data: {\r",
+							"            labels: [],\r",
+							"            datasets: [{\r",
+							"                data: [],\r",
+							"                \r",
+							"                // Change these colours to customize the chart\r",
+							"                backgroundColor: [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\", \"#ffa600\"],\r",
+							"            }]\r",
+							"        },\r",
+							"        options: {\r",
+							"            legend: { display: false },\r",
+							"            title: {\r",
+							"                display: true,\r",
+							"                text: 'Count'\r",
+							"            },\r",
+							"            scales: {\r",
+							"                xAxes: [{\r",
+							"                    display: true,\r",
+							"                    scaleLabel: {\r",
+							"                        display: true,\r",
+							"                        labelString: 'Items'\r",
+							"                    }\r",
+							"                }],\r",
+							"                yAxes: [{\r",
+							"                    display: true,\r",
+							"                    scaleLabel: {\r",
+							"                        display: true,\r",
+							"                        labelString: 'Count'\r",
+							"                    }\r",
+							"                }]\r",
+							"            }\r",
+							"        }\r",
+							"\r",
+							"    });\r",
+							"\r",
+							"    // Access the data passed to pm.visualizer.set() from the JavaScript\r",
+							"    // code of the Visualizer template\r",
+							"    pm.getData(function (err, value) {\r",
+							"        myChart.data.datasets[0].data = value.response.data;\r",
+							"        myChart.data.labels = Object.keys(value.response.data);\r",
+							"        myChart.update();\r",
+							"    });\r",
+							"\r",
+							"</script>`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    var res = pm.response.json();\r",
+							"    \r",
+							"    var visualizerData = {\r",
+							"        \r",
+							"        // Labels take an array of strings\r",
+							"        labels: Object.keys(res.data),\r",
+							"        \r",
+							"        // Data takes an array of numbers\r",
+							"        data: Object.values(res.data)\r",
+							"    };\r",
+							"\r",
+							"    return {response: visualizerData};\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"**Subject:** Request for Loan Account Adjustment  \\r\\n\\r\\n**Dear Wells Fargo Home Loan Servicing Team,**  \\r\\n\\r\\nI hope you are doing well. I am reaching out regarding my mortgage loan account and would like to request an adjustment related to the terms and structuring of my existing obligation. My goal is to ensure that my payments and loan commitments align with my financial planning while remaining compliant with all applicable servicing guidelines. I appreciate your assistance in processing this request and providing confirmation once it has been completed.  \\r\\n\\r\\nThe loan in question is under my name, John A. Doe, and is associated with loan number 123456789. The property tied to this mortgage is located at 456 Elm Street, Springfield, IL 62704. I would like this adjustment to take effect as of March 25, 2025. My request involves a modification in the loan commitment without any additional cash requirement, ensuring that the change is made within the existing structure of my loan.  \\r\\n\\r\\nI kindly request that the necessary steps be taken to process this adjustment accordingly. My intention is to make this change without requiring any additional financial disbursements, ensuring a smooth transition. I understand that such modifications require review and approval from your servicing team, and I am happy to provide any additional documentation or clarification that may be necessary to facilitate this process.  \\r\\n\\r\\nPlease confirm the receipt of this request and let me know if there are any forms or formalities that need to be completed to move forward. Additionally, if there are specific processing timelines associated with such requests, I would appreciate any insight into the expected timeframe for completion.  \\r\\n\\r\\nI would also like to take this opportunity to express my appreciation for the customer service and support that Wells Fargo has provided throughout my mortgage journey. Having a dedicated servicing team that assists borrowers with their loan-related inquiries is invaluable, and I am grateful for the assistance I have received thus far.  \\r\\n\\r\\nIf you require further details, please feel free to reach out to me via email or phone. I am happy to discuss any additional requirements and ensure that all necessary steps are taken to complete this request efficiently.  \\r\\n\\r\\nThank you in advance for your time and support. I look forward to your confirmation and guidance on the next steps.  \\r\\n\\r\\n**Best regards,**  \\r\\nJohn A. Doe  \\r\\n(555) 123-4567  \\r\\njohndoe@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/analyzeEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"analyzeEmail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
