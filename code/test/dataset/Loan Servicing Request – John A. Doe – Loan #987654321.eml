@@ -1,0 +1,187 @@
+Delivered-To: samridh.anand.paatni@gmail.com
+Received: by 2002:a05:6a11:fb18:b0:5f1:1978:c216 with SMTP id id24csp2747723pxc;
+        Tue, 25 Mar 2025 09:59:00 -0700 (PDT)
+X-Received: by 2002:a17:90b:1f86:b0:2f6:dcc9:38e0 with SMTP id 98e67ed59e1d1-3030fc3a833mr34908296a91.0.1742921940766;
+        Tue, 25 Mar 2025 09:59:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742921940; cv=none;
+        d=google.com; s=arc-20240605;
+        b=LnDbMDk8unITCV9qIrQE3CgagLx68jipBIxx8nuGQdRWdHOM6ibzl+upFJK1ZW11Jq
+         E/K5JjpU6Vng3F9uW9diNL8soRk2GPiNhJkm+cTSM401KufgEOcPmmpR6B2btRlC32Re
+         uoaZOi7nVSjiCggrDWIs3gFhJD9JilhtJnW7UQ5K4LfcrmISv851COYiw5Z/9SiLJ57z
+         QYKN7+JQ1MizMsWFW+SnqwUaZqHSS1xuJgdCiXvlAWSF8eoUKfYgkpkM1cdyHFLM2mg8
+         VkPTQT6q00lOWpBBozVNKLV+r/CrZrGG4wzTVa998+4b1a4C793YwwgmgBHLi5Pf2pDx
+         MA2A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=eBB6Yny4zcBFCLJ1ygpCrds05Z0dfQxROEkAy51yLbY=;
+        fh=OfiT4dPOiA7BZ1l5gwAiNd+APmQp4MU6CUeLYn5FAOs=;
+        b=dZ4hqyEqbrl+78dzVmUXW26cdf/GleF9pzA8v5U4M8fAmVltl6EBfsc+itHUWUXBu1
+         0NTkpq/dxDqvhk/IxY8YMwfQBjS4HS4JUorl2QISumMnTXzldJ6xmf0pO1WYwo8I4tUT
+         MQ7H6Y01Q+bchkYBQkerlEq1AH5wOJfV75SITyC0uDgT/ZuajvccXAHlE1hN6p7vo0Fu
+         Ne726ecIiApEJ5BYDN2D8bDkbvL7xVmaML3YNAOWN4o17DMyCiYpq8ZRi81ndgVDEIkk
+         KmlJKUl2fSOr/j5v/7p8/hJMbgcQZ6VkCY2mOZz5JvRAjj2RSzEdzVdSIjQIQzKU4xrt
+         QgPA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=hg4o+kuM;
+       spf=pass (google.com: domain of snehaannreji@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=snehaannreji@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <snehaannreji@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 98e67ed59e1d1-3030f79bb52sor7705489a91.7.2025.03.25.09.59.00
+        for <samridh.anand.paatni@gmail.com>
+        (Google Transport Security);
+        Tue, 25 Mar 2025 09:59:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of snehaannreji@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=hg4o+kuM;
+       spf=pass (google.com: domain of snehaannreji@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=snehaannreji@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742921940; x=1743526740; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=eBB6Yny4zcBFCLJ1ygpCrds05Z0dfQxROEkAy51yLbY=;
+        b=hg4o+kuMHC2EXX/4b/We2U5iZZEXvVFmzwMRYOe8AMjsi28mWtL7iSBw/TrSXSmuOR
+         TUpxiiRXJXRm0deuyxANt80NDnLwqFb07zujZZ0xoQ2+Or8drIdsZ4I28qgP9b9HIOIK
+         IydyK+LU1iIngYaDkqk6+hGgwo4ceqqXPBGNzQGkw2Q8E+W0r8t/0V6aCxdJLviCdP9u
+         AS9fP0plJLysHoamcDpp1+AmBzIXIEex9K78/rYk37KgtYLwMtSOw1aW2B54DvUCdV0H
+         asLzUzKILVj798ckdjmOKA2ojxgPt2+E+SDRK3ZMMEc9R/VzkjVJ+MmJXBiln6A+fM5X
+         /3Yw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742921940; x=1743526740;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=eBB6Yny4zcBFCLJ1ygpCrds05Z0dfQxROEkAy51yLbY=;
+        b=u4+kH2xSnWGhH2YjvXjwtaLFrQRN8s68gF199OABg8tK6jFJWIdkFSqxjVa3URF0Yu
+         Hf5v5k5nNOsuRFBAwnncFMvBZfBG+Y3UZqgQdIyBH6XyuNnHlNFCuGZEa37YY5+dKBEV
+         GWeH6C4cUdwVPNwG3ukuLfj6awE4aR7mzEcbcaIgutSuMVWesopzNj8MG8OjnL7FzBxy
+         Qcc1NBWxt6pvm+jkV17cT+tcAF9YNTepBh14IRWDG+pvqKxSDraH9B7BuKyAdrdlBfza
+         dHYDBXUecr0lqRrvMCD4bdSQcDRkHvaoUYV6jpSrnQXkUGtffF4KEp5Sh8kinddesW+e
+         eXxw==
+X-Gm-Message-State: AOJu0YzdqiSlancR+3BpRps5I9IbtjL4EoR0s3pRBYS5OJPMQV9I8lBH
+	ApIQvKQsiXooM/6mrLpYAKPbmRYjgtzvlMx+XQKNMQpgrrco29ImqZfEIANU1BO6XTEtjP0G1ar
+	coYein3CL6YvDQL2sL5DT1jxtNPn00yZMsSk=
+X-Gm-Gg: ASbGncvpXcOSiHgxEOKzzwicKQnmGIrmdc4mqy33/to24Y6UtkMTt+hNOTDwtHL5Mx8
+	TTEqf3S9DRrQYSVd2cQ4CoHlOYuS9bwpq+qPtl8lZlL/XB8jP0XhSmkHImsGKHdDChAhCuyaM4z
+	5dOlARIrmkS3JRVH6g1Bf0NgwYLo/Ca5STqH76
+X-Google-Smtp-Source: AGHT+IE5gtcbxIxVBWAS6md69AFedWV9i2LLZS753RVwFJCxPhNhSTTPw0ORB81NDE1ishGL5BZHicV1SoCJSABKQts=
+X-Received: by 2002:a17:90b:1dd2:b0:2fe:9e6c:add9 with SMTP id
+ 98e67ed59e1d1-3030fea2e9cmr31109437a91.18.1742921939824; Tue, 25 Mar 2025
+ 09:58:59 -0700 (PDT)
+MIME-Version: 1.0
+From: Sneha Ann Reji <snehaannreji@gmail.com>
+Date: Tue, 25 Mar 2025 22:28:49 +0530
+X-Gm-Features: AQ5f1JqHjDWZFkUNdUCgH8lWEdqNvEVJ9tVGYWbkE6xcC3E0Q-bDWwAOut_MqnE
+Message-ID: <CAGbMTF+6rpsi+abKvmg9rsL=y=5WuU1X6aGZR9_EV5Hp9ntcEQ@mail.gmail.com>
+Subject: =?UTF-8?Q?Loan_Servicing_Request_=E2=80=93_John_A=2E_Doe_=E2=80=93_Loan_=23987?=
+	=?UTF-8?Q?654321?=
+To: Samridh Anand Paatni <samridh.anand.paatni@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000018369f06312da392"
+
+--00000000000018369f06312da392
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Wells Fargo Loan Servicing Team,
+
+I hope this email finds you well. I am writing to formally request
+assistance regarding my mortgage loan account with Wells Fargo. My name is
+John A. Doe, and I currently hold a home loan with your institution under
+Loan Number 987654321. The property tied to this loan is located at 1234
+Elm Street, Springfield, IL 62701. I appreciate the exceptional customer
+service Wells Fargo provides and am reaching out for clarification and
+resolution regarding a specific matter related to my loan account.
+
+I have consistently maintained my loan obligations and have always ensured
+that my mortgage payments are made on time. My most recent payment of
+$2,150.00 was processed on March 1, 2025, and I can confirm that previous
+payments have been made promptly as well. However, upon reviewing my loan
+records and recent statements, I noticed an issue that requires immediate
+attention. Due to the nature of this request, I kindly request your team to
+review my account details and take the necessary steps to address and
+resolve the matter.
+
+To ensure a smooth and timely resolution, I would appreciate it if you
+could verify my account details and confirm any relevant updates that may
+be required. If any additional documentation is necessary, please let me
+know so I can provide the required information promptly. I kindly request
+that any written response or confirmation related to this matter be sent to
+my email at johndoe@email.com or mailed to my correspondence address on
+file to ensure I receive all necessary communications.
+
+I understand that Wells Fargo has a dedicated department that handles such
+loan servicing requests, and I truly appreciate your diligence in ensuring
+that accounts are accurately maintained. Please let me know the estimated
+timeline for processing this request and any next steps I need to take on
+my part. If there are any specific forms or procedural requirements I need
+to complete, I would be happy to comply as soon as possible to expedite the
+process.
+
+Furthermore, I would greatly appreciate a direct point of contact or
+reference number for tracking this request. Given that this matter pertains
+to important details of my mortgage, I kindly ask for a timely resolution
+to avoid any potential discrepancies in my account records. I trust that
+Wells Fargo=E2=80=99s loan servicing team will handle this request with the=
+ highest
+level of professionalism and efficiency.
+
+Thank you for your time and assistance in resolving this matter. I truly
+appreciate the support Wells Fargo provides to its customers and look
+forward to your prompt response. If any further details are required,
+please do not hesitate to contact me directly at (555) 123-4567.
+
+Best regards,
+John A. Doe
+johndoe@email.com
+(555) 123-4567
+1234 Elm Street, Springfield, IL 62701
+
+--00000000000018369f06312da392
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Dear Wells Fargo Loan Servicing Team,<br><br>I hope this e=
+mail finds you well. I am writing to formally request assistance regarding =
+my mortgage loan account with Wells Fargo. My name is John A. Doe, and I cu=
+rrently hold a home loan with your institution under Loan Number 987654321.=
+ The property tied to this loan is located at 1234 Elm Street, Springfield,=
+ IL 62701. I appreciate the exceptional customer service Wells Fargo provid=
+es and am reaching out for clarification and resolution regarding a specifi=
+c matter related to my loan account.<br><br>I have consistently maintained =
+my loan obligations and have always ensured that my mortgage payments are m=
+ade on time. My most recent payment of $2,150.00 was processed on March 1, =
+2025, and I can confirm that previous payments have been made promptly as w=
+ell. However, upon reviewing my loan records and recent statements, I notic=
+ed an issue that requires immediate attention. Due to the nature of this re=
+quest, I kindly request your team to review my account details and take the=
+ necessary steps to address and resolve the matter.<br><br>To ensure a smoo=
+th and timely resolution, I would appreciate it if you could verify my acco=
+unt details and confirm any relevant updates that may be required. If any a=
+dditional documentation is necessary, please let me know so I can provide t=
+he required information promptly. I kindly request that any written respons=
+e or confirmation related to this matter be sent to my email at <a href=3D"=
+mailto:johndoe@email.com">johndoe@email.com</a> or mailed to my corresponde=
+nce address on file to ensure I receive all necessary communications.<br><b=
+r>I understand that Wells Fargo has a dedicated department that handles suc=
+h loan servicing requests, and I truly appreciate your diligence in ensurin=
+g that accounts are accurately maintained. Please let me know the estimated=
+ timeline for processing this request and any next steps I need to take on =
+my part. If there are any specific forms or procedural requirements I need =
+to complete, I would be happy to comply as soon as possible to expedite the=
+ process.<br><br>Furthermore, I would greatly appreciate a direct point of =
+contact or reference number for tracking this request. Given that this matt=
+er pertains to important details of my mortgage, I kindly ask for a timely =
+resolution to avoid any potential discrepancies in my account records. I tr=
+ust that Wells Fargo=E2=80=99s loan servicing team will handle this request=
+ with the highest level of professionalism and efficiency.<br><br>Thank you=
+ for your time and assistance in resolving this matter. I truly appreciate =
+the support Wells Fargo provides to its customers and look forward to your =
+prompt response. If any further details are required, please do not hesitat=
+e to contact me directly at (555) 123-4567.<br><br>Best regards,<br>John A.=
+ Doe<br><a href=3D"mailto:johndoe@email.com">johndoe@email.com</a><br>(555)=
+ 123-4567<br>1234 Elm Street, Springfield, IL 62701</div>
+
+--00000000000018369f06312da392--

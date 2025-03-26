@@ -1,0 +1,109 @@
+Delivered-To: samridh.anand.paatni@gmail.com
+Received: by 2002:a05:6a11:fb18:b0:5f1:1978:c216 with SMTP id id24csp2748374pxc;
+        Tue, 25 Mar 2025 10:00:13 -0700 (PDT)
+X-Received: by 2002:a05:6a21:3a89:b0:1f5:8e94:2e83 with SMTP id adf61e73a8af0-1fe42f311a9mr27746681637.8.1742922013339;
+        Tue, 25 Mar 2025 10:00:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742922013; cv=none;
+        d=google.com; s=arc-20240605;
+        b=bqOwI2lm8d4pW3WKARdUPIKP0FZCejvp8HoNq3CI2AIeoouUk+caqJ4kqZG7Oe1S9Q
+         vmWZl3CdQNlQm2TXoYdxBRxu006LtQtWZ+98lMFISpr2qpM/MhOSmeEiB/ibdEZwDq4k
+         AQuLVRP0Fh3ROd2SqaVuefX4dNN1NEdC9zt+OgY/1Rm0JIB5dFkL2HP9GV8mwIcxx0aU
+         XN49CtMLz1lZ6wmIR7fZOruNoHdE9s1kVHwQQiAspfgLPWoeM52r4FejPbvFdlbHbvwH
+         qMuYqeo+DC1KiSHcK/BpbbH7A+EqpMCW5y9CKeXFCDc9KyQaFQDmktKqVgumhdFGHvVZ
+         vHRg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=nQ+VcHgjogjsN+E7nUF1hVKfI5TrdmhdLTJlQkXKHq0=;
+        fh=OfiT4dPOiA7BZ1l5gwAiNd+APmQp4MU6CUeLYn5FAOs=;
+        b=Ya1XOdVwB10ve4v9cjPeHOVkVlNWELh4oYxL8yp96a2mfTeJKeISJVomjydwHTa6GB
+         99Mkyk34hfZOlxG1sgkbysfGOnyHLyV1suLsUfhhZ/xpP6bXgvIUMN7nNhfN1l2+2tca
+         8P8ej1f1D7yM2jYwMtua1T5WBdDiRmd1Z7WGJo1Xe9OZ2mCSIpZfgrz5i0+r6PnGVkoJ
+         j+Uojy5tqgCZIM+FPeq0J65w41r9zt0+CqWmHYT/sQY87DGIgx9/o6w2edRrbXeKgm32
+         EBWpJe5JMePrk05LJ7PQyh8bkYt05SNOA3FyMIooH4pz6efH7Mwk3dEFW0qcpxYbnX+u
+         UfUw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=NKDcxNnM;
+       spf=pass (google.com: domain of snehaannreji@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=snehaannreji@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <snehaannreji@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 41be03b00d2f7-af9076d9db6sor687021a12.4.2025.03.25.10.00.13
+        for <samridh.anand.paatni@gmail.com>
+        (Google Transport Security);
+        Tue, 25 Mar 2025 10:00:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of snehaannreji@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=NKDcxNnM;
+       spf=pass (google.com: domain of snehaannreji@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=snehaannreji@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742922013; x=1743526813; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=nQ+VcHgjogjsN+E7nUF1hVKfI5TrdmhdLTJlQkXKHq0=;
+        b=NKDcxNnMZbqMgR5okE1TjRvS6D4RqVz74CYskNR3fzfM/ihFV2/GUm73jwXAYAS6GU
+         qigRIPbJoSctEUZfRf7lRch5ldKSJafLVR0LBZEkWjk6tGgwRZpEL98YwcQDQSOXubTw
+         KNZTJfvwLKqQ5WXdvQMuNyDR1WSB8ISd409JOq5zWmtUZOfaKqksx1eJydvr33qxIu5v
+         pa086fGggrdugpW6WL9qHpfVGs5RX0qlfCPgl/V6206xvFQrgCx/mnn9Te5Giab+Z0Jd
+         f3Qt0LSKkjNsrOBiJlTL8pNMGfxS5AJzU1b/w2T7s3XFvfOd19AOIYKBFmRCeDO1/2Qr
+         pD8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742922013; x=1743526813;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=nQ+VcHgjogjsN+E7nUF1hVKfI5TrdmhdLTJlQkXKHq0=;
+        b=DKiDcPUiudX1Efk2jfnBlA5Qu+WfaA5b3D/FOhg8XS78IAonPvaj3SHnrV04+R5pQs
+         T13PhvPeAT4yms7V25/BvA3K75+0PJlOzNXMARbFv5wfIGdpCSF/gWzrCUhiCm+pL3yf
+         KqHFmVPtGq3c2rVdymKkU0N88Hjdsngm/GAKZRuAuypcyhIxqKsQtRZzFV3/jL42cViS
+         izOpnj3THtLijtBiEal4eD3m2K2l7VlrpDfUgBTJTdayVDTFUxNddGKRgPnQQ7UyxSd8
+         c4C2fKIVyD06LOqMSDXt1IHzNLj5ota24hrUYIwtikRvyz87eboSDCGampLw2OtkcMg0
+         6Jzw==
+X-Gm-Message-State: AOJu0Yytdf0vySLh4t/FeYQEl1QQTwRfgOCpdNGVx97tebfivuwJLJXN
+	XpYFDkKz2yPs0gFGWnrYjID4cyfUR9jjYGIPSUS1b2JNdOCP7D21s/EkUSlqD1LokeAGvm3dm+t
+	8skp0LPYQclTdprqhq5xePWLKpss3ekjK
+X-Gm-Gg: ASbGnctB5IpbRY/Pa3D1NAvwfXyjCdVLsd2gMNHnhEDx1u5i1vdy4a24AQ9P8ldnQO8
+	8qwpGEAVeczOMxGtm45ua858Omyv5DIij5bhuSucABy3SDzINAKeFIiZp0ZivzhOAaqdg/4EVrO
+	l1J6OlsRiiy3cHHwfCNTukq/JDXqCXiuP0gasF
+X-Google-Smtp-Source: AGHT+IEdMnnSiOIm7nbz3aB8gnY9L98v+p3T4EZKaJuc6RJdvj5QoxBpQvfN+rspw215CES7298Pj7GuC8nWszyXoNs=
+X-Received: by 2002:a17:90b:5407:b0:2f9:cf97:56ac with SMTP id
+ 98e67ed59e1d1-3030fb219f6mr33442331a91.0.1742922012490; Tue, 25 Mar 2025
+ 10:00:12 -0700 (PDT)
+MIME-Version: 1.0
+From: Sneha Ann Reji <snehaannreji@gmail.com>
+Date: Tue, 25 Mar 2025 22:30:00 +0530
+X-Gm-Features: AQ5f1JpLnOkp6BQZ2QaQPSzDZoXKh9_05gqHYZLOcePPoys-a3YVLieHaPCyVEc
+Message-ID: <CAGbMTF+MiG+oFPBzbHad5u-GOwGT3ckzOoZus=hCJmNXF=eYJg@mail.gmail.com>
+Subject: Just a follow up
+To: Samridh Anand Paatni <samridh.anand.paatni@gmail.com>
+Content-Type: multipart/mixed; boundary="0000000000006d2bf006312da7d9"
+
+--0000000000006d2bf006312da7d9
+Content-Type: multipart/alternative; boundary="0000000000006d2bef06312da7d7"
+
+--0000000000006d2bef06312da7d7
+Content-Type: text/plain; charset="UTF-8"
+
+Hi
+
+How are you?
+
+--0000000000006d2bef06312da7d7
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hi=C2=A0<br><br>How are you?<div><br></div><div><br></div>=
+</div>
+
+--0000000000006d2bef06312da7d7--
+--0000000000006d2bf006312da7d9
+Content-Type: text/plain; charset="US-ASCII"; name="i am fine.txt"
+Content-Disposition: attachment; filename="i am fine.txt"
+Content-Transfer-Encoding: base64
+Content-ID: <f_m8oqr7h60>
+X-Attachment-Id: f_m8oqr7h60
+
+aSBhbSBmaW5l
+--0000000000006d2bf006312da7d9--
