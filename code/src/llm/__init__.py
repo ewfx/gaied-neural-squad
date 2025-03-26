@@ -49,7 +49,6 @@ def classify_email(text: str, attachments: list[str], llm: LLMChat):
     formatted_response = extract_json_from_string(second_response)
     
     request_type = formatted_response['requestType']
-    # print(f'identified response type to be {request_type}')
 
     request_type_fields = [rt['fields'] for rt in request_types['requestType'] if compare_string_fuzzy(rt['name'], request_type)][0]
     
@@ -64,11 +63,6 @@ def classify_email(text: str, attachments: list[str], llm: LLMChat):
     third_response = llm.prompt(specific_fields_prompt)
     
     request_field_values = extract_json_from_string(third_response)
-    
-    print("*******************************************************************************")
-    print(formatted_response)
-    print(third_response)
-    print(request_field_values)
     
     formatted_response['attributes'] = request_field_values
     
