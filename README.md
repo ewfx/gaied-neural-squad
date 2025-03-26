@@ -33,9 +33,13 @@ LLMs:
    ```sh
    pip install -r requirements.txt
    ```
-3. Run the project  
+3. Add environment file with token (`code/src/.env`)
+   ```
+   HUGGINGFACE_TOKEN=*add huggingface token here*
+   ```
+4. Run the project  
    ```sh
-   python app.py
+   fastapi run code/src/app.py
    ```
 
 ## 🏗️ Tech Stack
