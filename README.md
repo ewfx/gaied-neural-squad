@@ -1,6 +1,6 @@
 # 🚀 Project Name
 
-AI based email classification 
+GenAI Email Classification 
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -16,7 +16,7 @@ AI based email classification
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+This project is to classify Service Requests emails based on Request Type and to identify which emails can be ignored. This solution utilizes LLMs to classify emails.
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
@@ -25,17 +25,18 @@ A brief overview of your project and its purpose. Mention which problem statemen
 
 ![Screenshot 1](link-to-image)
 
-## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
-
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+Takes an email (.eml) file and identifies the request type, sub-request type, intent, and important attributes of the email. It also identifies whether the given email is essential or if it is non-essential and can be ignored.
 
 ## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+LLMs: 
+- mistralai/Mistral-7B-Instruct-v0.2 (https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2)
+- google/gemma-3-27b-it (https://huggingface.co/google/gemma-3-27b-it)
 
 ## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+- Usage limit on Hugging Face LLM API
+- Unable to use models larger than 10GB with HuggingFace LLM API
+- Generating output in desired format by LLM
 
 ## 🏃 How to Run
 1. Clone the repository  
@@ -44,18 +45,17 @@ Describe the major technical or non-technical challenges your team encountered.
    ```
 2. Install dependencies  
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+   pip install -r requirements.txt
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+   python app.py
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Frontend: HTML/CSS
+- 🔹 Backend: FastAPI 
+- 🔹 LLM: LangChain, HuggingFace
 
 ## 👥 Team
 - Laxmi Priya Guidvaka - [GitHub](#) | [LinkedIn](#)
